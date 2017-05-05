@@ -17,6 +17,7 @@ $result = $connection->query($query);
 </head>
 
 <body>
+<div id="wrapper">
 <label for="textfield">Banned user:</label>
 <input type="text" name="textfield" id="textfield">
 <button type="button" class="btn btn-primary">Filter</button>
@@ -44,7 +45,6 @@ $result = $connection->query($query);
 ?>
     </tbody>
 </table>
-
-
+</div>
 </body>
 </html>

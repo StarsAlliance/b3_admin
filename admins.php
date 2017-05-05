@@ -28,6 +28,8 @@ function сFlag($ip)
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="/css/style.css" rel="stylesheet" type="text/css" />
 </head>
+<body>
+<div id="wrapper">
 <table class="table table-striped table-bordered">
     <caption>Administrators</caption>
   <thead>
@@ -54,4 +56,6 @@ while($row = mysqli_fetch_array($result))
 ?>
     </tbody>
 </table>
+</div>
+</body>
 </html>
