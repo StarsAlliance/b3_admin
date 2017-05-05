@@ -10,35 +10,41 @@ $i=0;
  * @param $ip
  * @return string
  */
-function сFlag($ip){
+function сFlag($ip)
+{
     $code = geoip_country_code_by_name ($ip);
     $lcode = strtolower($code);
     return '<img src="flag/'.$lcode.'.svg" />';
 }
-
-echo'<table>
+?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Administrators</title>
+    <link type="text/css" rel="style.css"/>
+</head>
+<table>
   <tbody>
     <tr>
       <th scope="col">#</th>
-      <th scope="col"> </th>
       <th scope="col">Name</th>
       <th scope="col">Rights</th>
       <th scope="col">Country</th>
-    </tr>';
-
+    </tr>
+<?php
 while($row = mysqli_fetch_array($result))
 {
     $i=$i+1;
     $flag='';
     echo '<tr>
     <th scope="row">'.$i.'</th>
-    <td>'.$flag.'</td>
       <td>'.$row['name'].'</td>
       <td>'.$row['group_bits'].'</td>
       <td>'.geoip_country_name_by_name($row ['ip']).'</td>
   </tr>';
 }
-echo  '</tbody>
-</table>';
 ?>
-
+    </tbody>
+</table>;
+</html>
