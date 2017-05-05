@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors', '1');
 include_once ('connection.php');
 $connection = new mysqli($host,$username,$password,$database) or die("Couldn't connect to mysql");
 $query = "select name, ip, group_bits from clients where group_bits>40";
@@ -22,16 +21,24 @@ function сFlag($ip)
 <head>
     <meta charset="UTF-8">
     <title>Administrators</title>
-    <link type="text/css" rel="style.css"/>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<table>
-  <tbody>
+<table class="table table-striped table-bordered">
+    <caption>Administrators</caption>
+  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Rights</th>
       <th scope="col">Country</th>
     </tr>
+  </thead>
+    <tbody>
 <?php
 while($row = mysqli_fetch_array($result))
 {
@@ -46,5 +53,5 @@ while($row = mysqli_fetch_array($result))
 }
 ?>
     </tbody>
-</table>;
+</table>
 </html>
