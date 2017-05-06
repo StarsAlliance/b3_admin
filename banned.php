@@ -21,6 +21,7 @@ $result = $connection->query($query);
 <label for="textfield">Banned user:</label>
 <input type="text" name="textfield" id="textfield">
 <button type="button" class="btn btn-primary">Filter</button>
+    <h1>Banned users</h1>
 <table class="table table-striped table-bordered">
     <caption>Banned users</caption>
     <tbody>

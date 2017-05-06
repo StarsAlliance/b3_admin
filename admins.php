@@ -30,6 +30,7 @@ function сFlag($ip)
 </head>
 <body>
 <div id="wrapper">
+    <h1>Administrators</h1>
 <table class="table table-striped table-bordered">
     <caption>Administrators</caption>
   <thead>
